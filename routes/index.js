@@ -51,7 +51,7 @@ router.post('/Nesperas/vote/:id/vote/b', async (req, res) => {
 router.post('/Users', async (req, res) => {
   console.log('sasdas', req.body);
   const resData = await User.create(req.body);
-  res.json({ type: 'success', data: req.body });
+  res.json({ name: resData.name, email: resData.email, _id: resData._id });
 });
 
 router.get('/Users/:email', async (req, res) => {
